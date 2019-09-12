@@ -42,3 +42,16 @@ vim config
 修改 SELINUX=disabled
 将修改后的文件同步到各机器
 ansible all -m copy -a 'src=./config dest=/etc/selinux/config backup=yes'
+
+## ansible-galaxy
+
+ansible-galaxy install geerlingguy.nginx
+ansible-galaxy list geerlingguy.nginx
+
+ansible-pull
+
+## ansible-playbook
+
+ansible-vault: playbook的加密解密
+
+ansible-playbook hello.yaml --check

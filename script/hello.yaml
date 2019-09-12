@@ -1,0 +1,12 @@
+---
+- hosts: webServer
+  remote_user: root
+  tasks:
+    - name: create new file
+      file: name=/data/newfile state=touch
+    - name: create new user
+      user: name=test2 system=yes shell=/sbin/nologin
+    - name: install package
+      yum: name=httpd
+    - name: start service
+      service: name=httpd state=started enabled=yes
